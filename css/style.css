@@ -1,0 +1,187 @@
+
+/* header */
+header {
+  background-color: #1dace0;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fixed{
+  position: fixed;
+  width: 100%;
+  margin-top:-70px;
+}
+
+#margin-for-fixed{
+  margin-top:70px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-left: 80px;
+}
+
+.icon img {
+  height: 60px;
+}
+
+.icon .name strong{
+  color: #eae51f;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+}
+
+.header-right li:first-child{
+  margin-right: 20px;
+}
+/* ------- header ここまで ------ */
+
+/* welcome */
+.welcome {
+  height: 500px;
+  background-image: url(../img/background1.jpg);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title{
+  font-size: 64px;
+}
+
+.guideline{
+  font-size: 28px;
+  font-weight: bold;
+  margin-top:50px;
+}
+
+.guideline li{
+  margin-top: 16px;
+}
+
+.btn-group{
+  margin-top: 60px;
+}
+
+.btn {
+  height: 55px;
+  width: 170px;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: 120px;
+}
+
+.btn:first-child{
+  margin-left: 0;
+}
+
+.register{
+  background-color: rgba(29,172,224, .5);
+  border: 3px solid rgba(29,172,224, .3);
+
+}
+
+.register:hover{
+  background-color: rgb(29,172,224);
+}
+
+.login{
+  background-color: rgba(236,227,35, .5);
+  border: 3px solid rgba(236,227,35, .3);
+}
+
+.login:hover{
+  background-color: rgb(236,227,35);
+}
+/* welcome ここまで*/
+
+/* curriculum */
+.curriculum{
+  margin-top: 50px;
+}
+
+.subtitle{
+  font-size:36px;
+  text-align: center;
+}
+
+.img-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.img-box li {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 60px;
+}
+
+.img-box li:last-child{
+  margin-right: 0;
+}
+
+.img-box li img {
+  height: 300px;
+  width: 300px;
+}
+
+.img-box li span{
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+/* contact */
+.contact {
+  text-align: center;
+  background-color: #ebf4f5;
+  margin-top: 50px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+}
+
+.form .name ,.form .email{
+  height: 50px;
+  width: 400px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-left{
+  margin-right: 50px;
+}
+
+.inquiry{
+  height: 120px;
+  width: 400px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form .name{
+  margin-bottom: 20px;
+}
+
+.contact .form{
+  margin:50px 0 40px;
+}
