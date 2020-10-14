@@ -213,14 +213,40 @@ footer .footer-right {
 }
 
 /* タブレット用 */
-@media screen and (max-width: 960px) {
+/*@media screen and (max-width: 960px) {
   
-}
+}*/
 
 
 /* スマフォ用 */
 @media screen and (max-width: 480px) {
-  
+  body {
+    min-width: 375px;
+  }
+  /* header */
+
+  /* welcome */
+
+  /* curriculum */
+  .subtitle {
+    font-size: 24px;
+  }
+
+  .img-box {
+    flex-flow: column nowrap;
+  }
+
+  .img-box li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  /* contact */
+
+  /* footer */
+
 }
 
 
