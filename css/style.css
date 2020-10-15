@@ -321,6 +321,18 @@ footer .footer-right {
   }
 
   /* footer */
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer .icon {
+    display: none;
+  }
+
+  footer .footer-right {
+    margin-right: 0;
+  }
 
 }
 
