@@ -223,9 +223,48 @@ footer .footer-right {
 }
 
 /* タブレット用 */
-/*@media screen and (max-width: 960px) {
-  
-}*/
+@media screen and (max-width: 960px) {
+  .img-box {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .img-box li {
+    margin-top: 30px;
+    margin-right: 0;
+  }
+
+   /* contact */
+ .contact .form {
+  flex-flow: column nowrap;
+  margin:30px 0;
+ }
+
+  .form .name, .form .email ,.form .inquiry {
+    width: 80%;
+  }
+
+  .form .name, .form .email {
+    height: 30px;
+  }
+
+ .form .inquiry {
+    height: 50px;
+  }
+
+  .form-left {
+    margin-right: 0;
+  }
+
+  .form-right {
+    margin-top: 20px;
+  }
+
+  .contact button {
+    font-size: 20px;
+    padding: 5px 40px;
+  }
+}
 
 
 /* スマフォ用 */
