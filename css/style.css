@@ -283,6 +283,11 @@ footer .footer-right {
   right: -200px;
 }
 
+.drower.on {
+  right: 0;
+  transition-duration: 600ms;
+}
+
 /* ドロワー ここまで*/
 
 /*　レスポンシブ対応　*/
