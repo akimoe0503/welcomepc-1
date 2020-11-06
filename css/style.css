@@ -265,7 +265,7 @@ footer .footer-right {
 
 /* ドロワー */
 #drower-bg {
-  display: block; /* 後でnoneにする */
+  display: none; 
   position: fixed;
   top: 70px;
   right: 0;
@@ -280,7 +280,7 @@ footer .footer-right {
   height: 100vh;
   width: 200px;
   background-color: rgba(8, 8, 8, .5);
-  right: 0;
+  right: -200px;
 }
 
 /* ドロワー ここまで*/
