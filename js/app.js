@@ -2,6 +2,7 @@ $(function() {
   // ハンバーガーメニューが押された時
   $('#toggle').on('click',function(){
       $(this).toggleClass('on');
+      $(this).addClass();
       $('.js-drower').toggleClass('on');
       
       let isActive = $(this).hasClass('on');
