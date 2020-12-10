@@ -1,38 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <title>Welcome to NexSeed Okinawa</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" type="text/css" href="css/reset.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
- 
-</head>
-<body>
-  <!-- header -->
-  <header class="fixed">
-    <!-- header left -->
-    <div class="icon">
-      <img src="img/seedkun.png">
-      <span class="name"><strong>Seed</strong>Kun</span>
-    </div>
-    <!-- header right -->
-    <ul class="header-right">
-      <li>新規登録</li>
-      <li>ログイン</li>
-    </ul>
-    <!-- ハンバーガーメニュー -->
-    <div id="toggle" class="js-hamburger hamburger">
-      <span></span>
-    </div>
-    <!-- ドロワー -->
-    <div id="drower-bg"></div>
-    <ul class="drower js-drower">
-      <li class="js-register">新規登録</li>
-      <li class="js-login">ログイン</li>
-    </ul>
-  </header>
-  <!-- header ここまで -->
+<!-- get_header() wordpressが用意しているheader.phpを読み込むための関数 -->
+<?php get_header(); ?>
+
   <!-- welcome -->
   <main class="welcome" id="margin-for-fixed">
     <h1 class="title">Welcome to NexSeed Okinawa</h1>
@@ -48,20 +16,73 @@
   </main>
   <!-- welcome ここまで -->
 
+  <!-- news -->
+  <main class="latest_post">
+
+  <!-- 記事が存在する場合 下記phpを書く-->
+  <?php if (have_posts()): ?>
+    <h2 class="subtitle">最新の投稿</h2>
+    <ul>
+    <!-- while (繰り返しの条件。条件が満たされていたら繰り返す) -->
+    <!-- have_posts(): は、投稿された記事が存在する間-->
+    <!-- the_post(); は、記事を一つ取り出して扱えるようにする-->
+      <?php while (have_posts()): the_post(); ?>
+      <li id="post-<?php the_ID(); ?>" class="news">
+          <a href="<?php the_permalink(); //詳細のリンク ?>">
+            <img src="https://placehold.jp/80x80.png" alt="" height="80", width="80">
+          </a>
+          <div>                
+          <p><?php the_category(); //カテゴリ ?></p>
+          <p><?php the_time('Y/m/d');  //投稿日時 ?></p>
+          <p>
+            <a href="<?php the_permalink(); //詳細のリンク ?>"><?php the_title();  //タイトル ?></a>
+          </p>
+          <p>
+            <!-- こんにちは！寒い日が続いていますが... -->
+            <?php the_excerpt(); //本文抜粋 ?>
+            <a href="<?php the_permalink(); //詳細のリンク ?>">続きを読む</a>
+          </p>
+        </div>
+      </li>
+  <?php endwhile; ?>
+      <!-- <li id="post-1" class="news">
+          <a href="#">
+            <img src="https://placehold.jp/80x80.png" alt="" height="80", width="80">
+          </a>
+          <div>                
+          <p>カテゴリ</p>
+          <p>2020年11月30日</p>
+          <p>
+            <a href="#">タイトル</a>
+          </p>
+          <p>
+            お鍋がぴったりな時期になって...
+            <a href="#">続きを読む</a>
+          </p>
+        </div>
+      </li> -->
+    </ul>
+  <?php else:?>
+    <h2 class="subtitle">投稿はありません</h2>
+  <?php endif; ?>
+  </main>
+  <!-- new ここまで -->
+
+
 <!-- カリキュラム -->
 <main class="curriculum">
   <h2 class="subtitle">NexSeed Life</h2>
   <ul class="img-box">
     <li>
-      <img src="img/programming.jpg">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/programming.jpg">
       <span>Programing</span>
     </li>
     <li>
-      <img src="img/english.jpg">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/english.jpg">
       <span>English</span>
     </li>
     <li>
-      <img src="img/enjoy.jpg">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/enjoy.jpg">
       <span>Enjoy</span>
     </li>
   </ul>
@@ -71,33 +92,22 @@
 <!-- contact us -->
 <aside class="contact">
   <h2 class="subtitle">Contact Us</h2>
-  <?php if (isset($_GET["error"])){ ?>
-  <p style="color:red;">不正なアクセスがあったので、もう一度入力してください</p>
-  <?php } ?>
-
-  <?php
-  // こっちの書き方だと、HTMLタグが一つの文字列のように見えて書きづらい 
-  // if (isset($_GET["error"])){
-  // echo '<p style="color:red;">不正なアクセスがあったので、もう一度入力してください</p>';
-  // } 
-  ?>
   <!-- form -->
-  <!-- POST送信で、mail_send.phpに情報を送ります -->
-  <form method="POST" action="mail_send.php">
+  <form>
       <div class="form">
         <!-- 左側 -->
          <div class="form-left">
            <fieldset>
-             <input name="onamae" type="text" class="name" placeholder="お名前" required>
+             <input type="text" class="name" placeholder="お名前">
            </fieldset>
            <fieldset>
-             <input name="email" type="email" class="email" placeholder="メールアドレス" required>
+             <input type="email" class="email" placeholder="メールアドレス">
            </fieldset>
          </div>
         <!-- 右側 -->
         <div class="form-right">
           <fieldset>
-            <textarea name="inquiry" class="inquiry" placeholder="お問い合わせ内容" required></textarea>
+            <textarea class="inquiry" placeholder="お問い合わせ内容"></textarea>
           </fieldset>
         </div>
       </div>
@@ -108,24 +118,5 @@
 </aside>
 <!-- contact us ここまで -->
 
-<!-- footer -->
-<footer>
-  <!-- footer 左側 -->
-  <div class="icon">
-      <img src="img/seedkun.png">
-      <span class="name"><strong>Seed</strong>Kun</span>
-  </div>
-  <!-- footer 右側 -->
-  <p class="footer-right">Copyright (C) SeedKun inc</p>
-</footer>
-<!-- footer ここまで -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/app.js"></script>
-<?php if (isset($_GET["error"])){ ?>
-<script>
-  alert('不正なアクセスがあったのでもう一度入力してください');
-</script>
- <?php } ?>
-
-</body>
-</html>
+<!-- get_footer() wordpressが用意しているfooter.phpを読み込むための関数 -->
+<?php get_footer(); ?>

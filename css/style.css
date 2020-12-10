@@ -107,6 +107,19 @@ header {
 }
 /* welcome ここまで*/
 
+/* news */
+.latest_post{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.news{
+  display: flex;
+}
+/* news ここまで*/
+
 /* curriculum */
 .curriculum{
   margin-top: 50px;
